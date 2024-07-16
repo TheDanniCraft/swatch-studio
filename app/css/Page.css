@@ -1,0 +1,85 @@
+body {
+	padding: 1rem;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	grid-gap: 25px;
+}
+
+.palette-container {
+	display: flex;
+	flex-direction: column;
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.colors-container {
+	display: flex;
+	gap: 0;
+	overflow: hidden;
+}
+
+.colors-container button {
+	padding: 10px;
+	margin: 0;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	cursor: pointer;
+	transition: flex 0.2s ease-in-out, background-color 0.3s ease-in-out,
+		color 0.3s ease-in-out;
+	flex: 1 1 auto;
+	min-width: 0;
+	height: 7.5rem;
+	position: relative;
+	overflow: hidden;
+	box-sizing: border-box;
+	text-transform: uppercase;
+	border-radius: 0;
+}
+
+.colors-container button .text-overlay {
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px;
+	box-sizing: border-box;
+	transition: opacity 0.3s;
+	opacity: 0;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.colors-container button:hover .text-overlay {
+	opacity: 1;
+}
+
+.colors-container button .text-overlay div {
+	margin-bottom: 5px;
+	font-weight: bold;
+	white-space: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	line-clamp: 2;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.colors-container button .text-overlay .white-text {
+	color: #fafafa;
+}
+
+.colors-container button .text-overlay .black-text {
+	color: #18181b;
+}

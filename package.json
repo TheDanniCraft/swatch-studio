@@ -9,9 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/button": "^2.0.34",
+    "@nextui-org/react": "^2.4.2",
+    "@nextui-org/tooltip": "^2.0.36",
+    "@tabler/icons-react": "^3.10.0",
+    "color-name-list": "^10.24.0",
+    "framer-motion": "^11.3.2",
+    "nearest-color": "^0.4.4",
+    "next": "14.2.5",
+    "next-themes": "^0.3.0",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.5"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "postcss": "^8",
