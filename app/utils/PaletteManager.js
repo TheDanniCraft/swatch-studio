@@ -12,25 +12,34 @@ export async function readPalettes() {
     const nearest = nearestColor.from(colors);
     const palettes = [];
 
-    for (const file of files) {
-        if (file.endsWith('.palette')) {
-            const filePath = path.join(palettesDir, file);
-            const content = await fs.readFile(filePath, 'utf8');
-            const lines = content.split('\n').filter(Boolean); // Filter out empty lines
-            const palette = { name: file.replace('.palette', ''), colors: [] };
+    async function readDirRecursive(dir) {
+        const files = await fs.readdir(dir, { withFileTypes: true });
 
-            for (const line of lines) {
-                const hexValues = line.split(';');
+        for (const file of files) {
+            const filePath = path.join(dir, file.name);
 
-                for (const hex of hexValues) {
-                    const colorName = nearest('#' + hex.trim().replaceAll('#', '').replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, '#$1$1$2$2$3$3').slice(0, 7)).name;
-                    palette.colors.push({ hex, name: colorName });
+            if (file.isDirectory()) {
+                await readDirRecursive(filePath);
+            } else if (file.isFile() && file.name.endsWith('.palette')) {
+                const content = await fs.readFile(filePath, 'utf8');
+                const lines = content.split('\n').filter(Boolean); // Filter out empty lines
+                const palette = { name: file.name.replace('.palette', ''), colors: [] };
+
+                for (const line of lines) {
+                    const hexValues = line.split(';');
+
+                    for (const hex of hexValues) {
+                        const colorName = nearest('#' + hex.trim().replaceAll('#', '').replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, '#$1$1$2$2$3$3').slice(0, 7)).name;
+                        palette.colors.push({ hex, name: colorName });
+                    }
                 }
-            }
 
-            palettes.push(palette);
+                palettes.push(palette);
+            }
         }
     }
+
+    await readDirRecursive(palettesDir);
 
     return palettes;
 }
