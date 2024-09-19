@@ -16,7 +16,7 @@
     "color-name-list": "^10.24.0",
     "framer-motion": "^11.3.2",
     "nearest-color": "^0.4.4",
-    "next": "14.2.8",
+    "next": "14.2.10",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18"
