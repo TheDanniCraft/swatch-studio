@@ -13,7 +13,7 @@
     "@nextui-org/react": "^2.4.2",
     "@nextui-org/tooltip": "^2.0.36",
     "@tabler/icons-react": "^3.10.0",
-    "color-name-list": "^10.24.0",
+    "color-name-list": "^11.0.0",
     "framer-motion": "^11.3.2",
     "nearest-color": "^0.4.4",
     "next": "15.0.3",
