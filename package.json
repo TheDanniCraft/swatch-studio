@@ -13,7 +13,7 @@
     "@nextui-org/react": "^2.4.2",
     "@nextui-org/tooltip": "^2.0.36",
     "@tabler/icons-react": "^3.10.0",
-    "color-name-list": "^13.1.0",
+    "color-name-list": "^14.1.0",
     "framer-motion": "^12.0.5",
     "nearest-color": "^0.4.4",
     "next": "16.0.7",
@@ -25,6 +25,6 @@
     "postcss": "^8",
     "tailwindcss": "^4.0.0",
     "eslint": "^9.7.0",
-    "eslint-config-next": "16.0.5"
+    "eslint-config-next": "16.0.7"
   }
 }
