@@ -12,7 +12,7 @@
     "@nextui-org/button": "^2.2.9",
     "@nextui-org/react": "^2.6.11",
     "@nextui-org/tooltip": "^2.2.7",
-    "@tabler/icons-react": "^3.36.1",
+    "@tabler/icons-react": "^3.37.1",
     "color-name-list": "^14.32.0",
     "framer-motion": "^12.34.0",
     "nearest-color": "^0.4.4",
