@@ -9,7 +9,7 @@ const subscribe = () => () => {};
 
 export function ThemeSwitcher() {
 	const mounted = useSyncExternalStore(subscribe, () => true, () => false);
-	const { theme, setTheme } = useTheme();
+	const { resolvedTheme, setTheme } = useTheme();
 
 
 	if (!mounted) return null;
@@ -18,9 +18,11 @@ export function ThemeSwitcher() {
 		<div>
 			<Button
 				isIconOnly
-				onClick={() => setTheme(theme == "dark" ? "light" : "dark")}
+				variant="secondary"
+				aria-label={resolvedTheme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+				onPress={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
 			>
-				{theme == "dark" ? (
+				{resolvedTheme === "dark" ? (
 					<IconSunFilled color='#fbbf24' />
 				) : (
 					<IconMoonFilled color='#1e40af' />
