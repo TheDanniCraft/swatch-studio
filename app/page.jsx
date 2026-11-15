@@ -4,7 +4,7 @@ import { ThemeSwitcher } from "@/app/components/ThemeSwitcher";
 import { readPalettes } from "@/app/utils/PaletteManager";
 import { useEffect, useState } from "react";
 import "@/app/css/Page.css";
-import { Tooltip } from "@nextui-org/tooltip";
+import { Tooltip } from "@heroui/react";
 
 export default function Home() {
 	const [palettes, setPalettes] = useState([]);

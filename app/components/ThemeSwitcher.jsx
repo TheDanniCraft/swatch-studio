@@ -1,17 +1,16 @@
 "use client";
 
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/react";
 import { IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+
+const subscribe = () => () => {};
 
 export function ThemeSwitcher() {
-	const [mounted, setMounted] = useState(false);
+	const mounted = useSyncExternalStore(subscribe, () => true, () => false);
 	const { theme, setTheme } = useTheme();
 
-	useEffect(() => {
-		setMounted(true);
-	}, []);
 
 	if (!mounted) return null;
 

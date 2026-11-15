@@ -3,7 +3,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import nearestColor from 'nearest-color';
-import colorNamesList from 'color-name-list/dist/colornames.bestof.esm'
+import { colornames as colorNamesList } from 'color-name-list/bestof'
 
 export async function readPalettes() {
     const palettesDir = path.join(process.cwd(), './palettes');
