@@ -40,8 +40,10 @@ export default function Home() {
 					<div key={paletteIndex} className='palette-container'>
 						<div className='colors-container'>
 							{colors.map(({ hex, name: colorName }, colorIndex) => (
-								<Tooltip key={colorIndex} content='Click to copy'>
-									<button
+								<Tooltip key={colorIndex} delay={0}>
+									<Tooltip.Trigger
+										render={(props) => <button {...props} type="button" />}
+										aria-label={`Copy ${colorName} (${hex})`}
 										style={{ backgroundColor: hex }}
 										onMouseEnter={(e) => {
 											e.currentTarget.querySelector(
@@ -61,7 +63,8 @@ export default function Home() {
 											<div className={getContrastColor(hex)}>{hex}</div>
 											<div className={getContrastColor(hex)}>{colorName}</div>
 										</span>
-									</button>
+									</Tooltip.Trigger>
+									<Tooltip.Content>Click to copy</Tooltip.Content>
 								</Tooltip>
 							))}
 						</div>

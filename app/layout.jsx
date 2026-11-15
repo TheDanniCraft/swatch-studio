@@ -11,8 +11,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang='en'>
-			<body>
+		<html lang='en' suppressHydrationWarning>
+			<body className="bg-background text-foreground">
 				<Providers>{children}</Providers>
 			</body>
 		</html>
