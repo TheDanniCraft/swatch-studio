@@ -9,7 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@heroui/react": "3.2.7",
+    "@heroui/react": "3.2.8",
     "@heroui/styles": "3.2.7",
     "@tabler/icons-react": "^3.52.0",
     "color-name-list": "^14.86.0",
