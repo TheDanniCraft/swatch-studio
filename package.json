@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@heroui/react": "3.2.7",
-    "@heroui/styles": "3.2.7",
+    "@heroui/styles": "3.2.8",
     "@tabler/icons-react": "^3.52.0",
     "color-name-list": "^14.86.0",
     "framer-motion": "^14.14.0",
